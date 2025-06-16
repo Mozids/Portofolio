@@ -12,18 +12,18 @@ const Home = () => {
     <>
       <div
         id="home"
-        className="min-h-screen flex flex-col bg-Primary relative overflow-hidden"
+        className="h-screen flex flex-col bg-Primary relative overflow-hidden"
       >
-        <div className="absolute top-[90%] left-[10%] w-48 h-48 sm:w-64 sm:h-64 bg-Secondary rounded-full filter blur-3xl opacity-40 animate-float z-0" />
-        <div className="absolute bottom-[70%] right-[10%] w-64 h-64 sm:w-80 sm:h-80 bg-Secondary rounded-full filter blur-3xl opacity-30 animate-float z-0" />
+        <div className="absolute top-[90%] left-[10%] w-48 h-48 sm:w-64 sm:h-64 bg-Secondary rounded-full filter blur-3xl opacity-40 animate-float z-0"></div>
+        <div className="absolute bottom-[70%] right-[10%] w-64 h-64 sm:w-80 sm:h-80 bg-Secondary rounded-full filter blur-3xl opacity-30 animate-float z-0"></div>
 
         <div className="fixed top-0 left-0 w-full z-50">
           <Header />
         </div>
 
-        <div className="flex-grow flex justify-center items-center px-4 sm:px-8 pt-32 pb-10">
-          <div className="flex flex-col-reverse md:flex-row w-full max-w-7xl justify-between items-center gap-10 md:gap-20 relative z-10">
-            <div className="md:w-1/2 flex flex-col justify-center items-start text-center md:text-left">
+        <div className="flex-grow flex justify-center items-center px-4 sm:px-8 ">
+          <div className="flex flex-col-reverse md:flex-row w-full max-w-7xl justify-center items-center h-full gap-10 md:gap-20 relative z-10">
+            <div className="md:w-1/2 flex flex-col justify-center items-start">
               <h1 className="text-3xl md:text-4xl sm:text-5xl font-bold">
                 <p className="text-lg">Hello there!!</p>
                 I'M{" "}
@@ -36,22 +36,20 @@ const Home = () => {
                 Teknologi berkembang berkat keberanian mereka yang berani
                 bermimpi besar dan mewujudkan ide-ide yang belum pernah ada.
               </p>
-
-              <div className="flex mt-9 flex-col sm:flex-row items-center gap-6">
+              <div className="flex mt-9 items-center gap-6">
                 <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const aboutSection = document.getElementById("contact");
-                    if (aboutSection) {
-                      aboutSection.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="py-3 px-6 bg-Secondary rounded-full hover:bg-Secondary/80 hover:shadow-lg transition duration-300 font-semibold text-sm"
-                >
-                  Contact Me
-                </button>
-
-                <div className="flex items-center gap-4">
+                onClick={(e) => {
+                  e.preventDefault();
+                  const aboutSection = document.getElementById("contact");
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="py-3 px-6 bg-Secondary rounded-full hover:bg-Secondary/80 hover:shadow-lg transition duration-300 font-semibold text-sm"
+              >
+                Contact Me
+              </button>
+                <div className="flex items-center gap-4 z-10">
                   <Link
                     to="https://github.com/Mozids"
                     target="_blank"
@@ -70,8 +68,8 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-1/2 flex justify-center lg:justify-end items-center">
-              <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] xl:w-[500px] xl:h-[500px] rounded-full bg-Secondary drop-shadow-xl overflow-hidden">
+            <div className="w-full md:w-2/3 lg:w-1/2 flex justify-center lg:justify-end items-center">
+              <div className="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] xl:w-[500px] xl:h-[500px] rounded-full bg-Secondary drop-shadow-xl overflow-hidden ">
                 <img
                   src={i}
                   alt="Sultan"
@@ -82,16 +80,17 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <About />
-      <Project />
-      <Contact />
-
+      <div>
+        <About />
+      </div>
+      <div>
+        <Project />
+      </div>
+      <div>
+        <Contact />
+      </div>
       <footer className="w-full bg-Tertiary py-6 text-center text-white text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} Sultan Sulaiman. All rights
-          reserved.
-        </p>
+        <p>&copy; {new Date().getFullYear()} Sultan Sulaiman. All rights reserved.</p>
       </footer>
     </>
   );
