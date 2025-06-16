@@ -15,7 +15,6 @@ const Header = () => {
 
   return (
     <header className="w-full flex justify-center mt-5 relative">
-      {/* Desktop Navigation */}
       <div className="hidden md:flex bg-Secondary rounded-full drop-shadow-lg px-6 h-14 items-center">
         <ul className="flex gap-6 font-semibold text-gray-700 text-sm">
           {navItems.map((item) => (
